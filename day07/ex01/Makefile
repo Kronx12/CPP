@@ -1,7 +1,7 @@
-SRCS=main.cpp
-NAME=converter
+SRCS=iter.cpp
+NAME=iter
 
-all:	$(NAME)
+all:	$(NAME) $(SRCS)
 
 $(NAME):
 	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra

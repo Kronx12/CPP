@@ -1,5 +1,5 @@
-SRCS=main.cpp
-NAME=converter
+SRCS=whatever.cpp
+NAME=whatever
 
 all:	$(NAME)
 

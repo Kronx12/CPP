@@ -1,10 +1,10 @@
 SRCS=main.cpp
 NAME=serializer
 
-$(NAME): all
+all:	$(NAME)
 
-all:
-	clang++ $(SRCS) -Wall -Werror -Wextra -o $(NAME)
+$(NAME):
+	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra
 
 re:	fclean all
 
