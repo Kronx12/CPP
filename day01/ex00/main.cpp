@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 12:29:34 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/13 12:29:34 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 09:29:53 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 // Pony allocation and auto delete
 void ponyOnTheStack() {
-    Pony poney = Pony("PoneyS");
+    Pony poney("PoneyS", 5);
     poney.jump();
 }
 
 // Pony allocation and delete
 void ponyOntheHeap() {
-    Pony *poney = new Pony("PoneyH");
+    Pony *poney = new Pony("PoneyH", 18);
     poney->jump();
     delete poney;
 }

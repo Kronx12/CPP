@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 14:03:54 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/14 03:38:57 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 10:39:16 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class Brain {
     private:
         int neurones;
+
     public:
         Brain();
         std::string identifier() const;

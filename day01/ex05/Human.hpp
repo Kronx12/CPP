@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 14:04:05 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/14 03:38:07 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 10:41:22 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Human {
     private:
         const Brain brain;
+
     public:
         Human();
         const Brain &getBrain() const;

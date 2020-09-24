@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 12:30:23 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/13 12:30:24 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 10:16:12 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Zombie {
         std::string type;
         
     public:
-        void announce();
+        void advert();
         void setName(std::string nname);
         void setType(std::string ntype);
 };

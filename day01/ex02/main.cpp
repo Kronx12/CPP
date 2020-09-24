@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 12:30:01 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/13 13:43:31 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 10:20:37 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ int main() {
     ZombieEvent *factory = new ZombieEvent();
 
     factory->setZombieType("Vert");
-    Zombie *zombie1 = factory->randomChump();
+    Zombie zombie1 = factory->randomChump();
     factory->setZombieType("Bleu");
-    Zombie *zombie2 = factory->randomChump();
-    Zombie *zombie3 = factory->randomChump();
+    Zombie zombie2 = factory->randomChump();
+    factory->setZombieType("Red");
+    Zombie zombie3 = factory->randomChump();
 
-    delete zombie1;
-    delete zombie2;
-    delete zombie3;
     delete factory;
     return (0);
 }

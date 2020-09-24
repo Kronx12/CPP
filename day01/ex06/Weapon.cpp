@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 04:17:26 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/14 04:35:23 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 10:43:32 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ Weapon::Weapon() {
     type = std::string("undefined");
 }
 
-Weapon::Weapon(std::string stype) {
-    type = stype;
-}
+// SETTER
+Weapon::Weapon(std::string stype) { type = stype; }
+void Weapon::setType(std::string stype) { type = stype; }
 
-void Weapon::setType(std::string stype) {
-    type = stype;
-}
-
-const std::string& Weapon::getType() const {
-    return (type);
-}
+// GETTER
+const std::string& Weapon::getType() const { return (type); }
