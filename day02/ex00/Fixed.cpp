@@ -3,40 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 06:44:16 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/14 07:43:50 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 20:38:02 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 Fixed::Fixed() : value(0) {
-    std::cout << "Default constructor called" << std::endl;
+    cout << "Default constructor called" << endl;
 }
 
 Fixed::Fixed(const Fixed &fixed) {
+    cout << "Copy constructor called" << endl;
     value = fixed.getRawBits();
-    std::cout << "Copy constructor called" << std::endl;
 }
 
 void Fixed::operator=(const Fixed &fixed) {
-    value = fixed.value;
-    std::cout << "Assignation operator called" << std::endl;
+    cout << "Assignation operator called" << endl;
+    value = fixed.getRawBits();
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called" << std::endl;
+    cout << "Destructor called" << endl;
 }
 
 int Fixed::getRawBits(void) const {
-    std::cout << "getRawBits member function called" << std::endl;
+    cout << "getRawBits member function called" << endl;
     return (value);
 }
 
 void Fixed::setRawBits(int const raw) {
+    cout << "setRawBits member function called" << endl;
     value = raw;
-    std::cout << "setRawBits member function called" << std::endl;
 }

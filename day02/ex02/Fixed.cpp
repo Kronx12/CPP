@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 06:44:16 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/14 14:43:49 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 21:38:49 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ Fixed &Fixed::operator++() {
 }
 
 Fixed Fixed::operator++(int x) {
+    (void)x;
     Fixed tmp = *this;
     ++(*this);
     return (tmp);
@@ -59,6 +60,7 @@ Fixed &Fixed::operator--() {
 }
 
 Fixed Fixed::operator--(int x) {
+    (void)x;
     Fixed tmp = *this;
     --(*this);
     return (tmp);

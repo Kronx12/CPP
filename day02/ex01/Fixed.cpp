@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 06:44:16 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/14 08:55:19 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/09/24 20:50:51 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,21 @@ Fixed::Fixed() : value(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int v) {
-    value = (v << bits);
+Fixed::Fixed(const int v) : value(v << bits) {
+    std::cout << "Int constructor called" << std::endl;
 }
-
-Fixed::Fixed(const float v) {
-    value = roundf(v * (1 << bits));
+Fixed::Fixed(const float v) : value(roundf(v * (1 << bits))) {
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed) {
-    value = fixed.getRawBits();
     std::cout << "Copy constructor called" << std::endl;
+    value = fixed.getRawBits();
 }
 
 void Fixed::operator=(const Fixed &fixed) {
-    value = fixed.value;
     std::cout << "Assignation operator called" << std::endl;
+    value = fixed.getRawBits();
 }
 
 std::ostream &operator<<(std::ostream &out, Fixed const &value) {
@@ -51,8 +50,8 @@ int Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits(int const raw) {
-    value = raw;
     std::cout << "setRawBits member function called" << std::endl;
+    value = raw;
 }
 
 int Fixed::toInt(void) const {
