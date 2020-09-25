@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 06:44:16 by gbaud             #+#    #+#             */
-/*   Updated: 2020/09/24 20:50:51 by gbaud            ###   ########.fr       */
+/*   Updated: 2020/09/25 10:49:26 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 int Fixed::toInt(void) const {
-    return (value);
+    return (value >> bits);
 }
 
 float Fixed::toFloat(void) const {

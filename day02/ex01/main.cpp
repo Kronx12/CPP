@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 08:02:59 by gbaud             #+#    #+#             */
-/*   Updated: 2020/09/24 21:25:49 by gbaud            ###   ########.fr       */
+/*   Updated: 2020/09/25 10:48:37 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,16 @@ int main(void) {
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
+    std::cout << "d is " << d << std::endl << std::endl;
 
-    std::cout << "a is " << d.toInt() << " as integer" << std::endl;
+    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    std::cout << "d is " << a.toInt() << " as integer" << std::endl;
+    std::cout << "d is " << d.toInt() << " as integer" << std::endl << std::endl;
    
+    std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+    std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+    std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+    std::cout << "d is " << d.toFloat() << " as float" << std::endl << std::endl;
     return 0;
 }
