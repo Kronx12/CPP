@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 04:37:42 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/15 07:46:15 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 05:28:01 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FRAGTAP_HPP
 
 #include "ClapTrap.hpp"
-#include <time.h>
+#include <stdlib.h>
 
 class FragTrap : public ClapTrap {
     public:

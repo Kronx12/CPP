@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 04:37:46 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/15 07:50:50 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 05:33:38 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include <stdlib.h>
 
 ScavTrap::ScavTrap(std::string pname) : ClapTrap(pname, 100, 100, 50, 50, 1, 20, 15, 3) {
     std::cout << "SC4V-TP : Constructor called !" << std::endl;
@@ -45,17 +46,14 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 }
 
 void ScavTrap::challengeNewcomer(const std::string &target) {
-	struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-    srand((time_t)ts.tv_nsec);
-    int rand = std::rand()%5;
+    int r = rand() % 5;
     std::string challenges[5];
     challenges[0] = "Challenge 1";
     challenges[1] = "Challenge 2";
     challenges[2] = "Challenge 3";
     challenges[3] = "Challenge 4";
     challenges[4] = "Challenge 5";
-    std::cout << "SC4V-TP : " << name << " challenge " << target << " \" " << challenges[rand] << " \" !" << std::endl;
+    std::cout << "SC4V-TP : " << name << " challenge " << target << " \" " << challenges[r] << " \" !" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {

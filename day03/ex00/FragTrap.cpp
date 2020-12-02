@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 04:37:46 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/15 06:01:40 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 04:05:13 by gbaud            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 #include <time.h>
+#include <stdlib.h>
 
 // CONSTRUCTOR
 FragTrap::FragTrap(std::string pname) : name(pname) {
@@ -63,10 +64,7 @@ void FragTrap::meleeAttack(const std::string &target) {
 }
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target) {
-	struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-    srand((time_t)ts.tv_nsec);
-    int rand = std::rand()%5;
+    int r = rand() % 5;
     std::string attacks[5];
     attacks[0] = "HadoKen";
     attacks[1] = "Dive Kick";
@@ -77,7 +75,7 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target) {
     if (energy_point < 25)
         std::cout << "FR4G-TP " << name << " n'a pas assez d'energies !" << std::endl;
     else {
-        std::cout << "FR4G-TP " << name << " attaque " << target << " en lui faisant un " << attacks[rand] << ", causant " << dmgs[rand] << " points de dégâts !" << std::endl;
+        std::cout << "FR4G-TP " << name << " attaque " << target << " en lui faisant un " << attacks[r] << ", causant " << dmgs[r] << " points de dégâts !" << std::endl;
         energy_point -= 25;
     }
 }
