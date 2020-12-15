@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 08:31:43 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/17 12:39:26 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 07:06:15 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main() {
     std::cout << *moi;
     
     Enemy* b = new RadScorpion();
+    Enemy* m = new SuperMutant();
     
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();
@@ -34,8 +35,48 @@ int main() {
     std::cout << *moi;
     moi->attack(b);
     std::cout << *moi;
+
+    moi->attack(m);
+    std::cout << *moi;
+
     moi->attack(b);
     std::cout << *moi;
 
+    moi->recoverAP();
+    moi->recoverAP();
+    moi->recoverAP();
+    moi->recoverAP();
+
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+    moi->attack(m);
+    std::cout << *moi;
+
+    std::cout << "Mutant life : " << m->getHP();
+
+    moi->recoverAP();
+    moi->recoverAP();
+    moi->recoverAP();
+    moi->recoverAP();
+    
+    moi->attack(m);
+    std::cout << *moi;
+
+
+    delete moi;
+    delete pr;
+    delete pf;
     return (0);
 }

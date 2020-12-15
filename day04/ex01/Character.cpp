@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 11:48:18 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/17 12:15:35 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 06:58:36 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(const std::string &pname) : name(pname) { ap = 40; }
-Character::Character(const Character &carac) : name(carac.getName()) { ap = 40; }
+Character::Character(const std::string &pname) : name(pname) { ap = 40; arme = NULL; }
+Character::Character(const Character &carac) : name(carac.getName()) { ap = 40; arme = NULL; }
 Character &Character::operator=(const Character &carac) {
     name = carac.getName();
     ap = carac.ap;
