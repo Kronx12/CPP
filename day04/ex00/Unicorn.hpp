@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Unicorn.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/15 13:29:06 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/15 06:11:19 by gbaud            ###   ########lyon.fr   */
+/*   Created: 2020/12/15 06:24:58 by gbaud             #+#    #+#             */
+/*   Updated: 2020/12/15 06:25:42 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-#define VICTIM_HPP
-#include <iostream>
+#ifndef UNICORN_HPP
+#define UNICORN_HPP
+#include "Victim.hpp"
 
-class Victim {
+class Unicorn : public Victim {
     private:
-        Victim();
-        std::string name;
+        Unicorn();
     public:
-        Victim(std::string pname);
-        Victim(const Victim &other);
-        Victim &operator=(const Victim &other);
-        std::string getName() const;
-        virtual void getPolymorphed() const;
-        ~Victim();
+        Unicorn(std::string pname);
+        Unicorn(const Unicorn &other);
+        Unicorn &operator=(const Unicorn &other);
+        void getPolymorphed() const;
+        ~Unicorn();
 };
-std::ostream &operator<<(std::ostream &os, const Victim &other);
 
 #endif
