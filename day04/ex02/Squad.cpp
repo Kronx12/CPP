@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 14:59:38 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/18 12:28:45 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 07:11:27 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <cstddef>
 
 Squad::Squad() : count(0), units(NULL) {}
+
 Squad::Squad(const ISquad &other) : count(0), units(NULL) {
     for (int i = 0; i < count; i++)
         push(other.getUnit(i)->clone());
@@ -29,6 +30,7 @@ Squad &Squad::operator=(const ISquad &other) {
 }
 
 int Squad::getCount() const { return (count); }
+
 ISpaceMarine *Squad::getUnit(int i) const {
     if (i < 0 || i >= count)
         return (NULL);

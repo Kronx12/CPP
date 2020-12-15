@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 14:46:42 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/18 12:26:55 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 07:23:10 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
-/*
+
 int main() {
     ISpaceMarine* bob = new TacticalMarine;
     ISpaceMarine* jim = new AssaultTerminator;
@@ -36,9 +36,10 @@ int main() {
     }
     delete tmp;
     return 0;
-}*/
-
+}
+/*
 #include <iostream>
+#include <stdlib.h>
 #include "Squad.hpp"
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
@@ -86,7 +87,7 @@ int main(void)
 		else
 			squad.getUnit(i)->meleeAttack();
 	}
-	std::cout << squad.getCount() << " -> " << squad.push(nullptr) << std::endl;
+	std::cout << squad.getCount() << " -> " << squad.push(NULL) << std::endl;
 	std::cout << squad.getCount() << " -> " << squad.push(squad.getUnit(UNITS - 1)) << std::endl;
 	std::cout << squad.getCount() << " -> " << squad.push(squad.getUnit(UNITS)) << std::endl;
 	std::cout << squad.getCount() << " -> " << squad.push(squad.getUnit(UNITS + 1)) << std::endl;
@@ -107,4 +108,4 @@ int main(void)
 	aes = *static_cast<AssaultTerminator*>(squad.getUnit(1));
 
 	return (0);
-}
+}*/
