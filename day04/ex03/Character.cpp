@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 14:52:02 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/19 08:20:36 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 08:21:47 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string pname) :
-    name(pname) {}
+Character::Character(std::string pname) : name(pname) {
+    for (int i = 0; i < 4; i++)
+        inv[i] = NULL;
+}
 
 Character::Character(const Character &charac) :
     name(charac.getName()) {

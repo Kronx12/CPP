@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 14:42:00 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/18 15:53:45 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 08:12:16 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 class Ice : public AMateria {
     public:
         Ice();
+        Ice(const Ice &mat);
+        Ice &operator=(const Ice &mat);
         AMateria *clone() const;
-        void use(ICharacter &target);
+        virtual void use(ICharacter &target);
         ~Ice();
 };
 

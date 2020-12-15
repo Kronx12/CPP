@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 14:43:28 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/18 15:51:21 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 08:07:38 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+
+AMateria::AMateria() {}
 
 AMateria::AMateria(const std::string &ptype) :
     _xp(0), type(ptype) {}
@@ -31,8 +33,9 @@ unsigned int AMateria::getXP() const {
     return (_xp);
 }
 
-void AMateria::addXP(unsigned int a) {
-    _xp += a;
+void AMateria::use(ICharacter &target) {
+    (void)target;
+    _xp += 10;
 }
 
 AMateria::~AMateria() {}

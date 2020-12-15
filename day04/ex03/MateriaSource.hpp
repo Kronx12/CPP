@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 15:01:01 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/18 20:09:50 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 07:59:15 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MARTERIASOURCE_HPP
 #define MARTERIASOURCE_HPP
 #include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
 class MateriaSource : public IMateriaSource {
     private:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 15:00:50 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/19 08:24:28 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/15 08:22:31 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource() {
     for (int i = 0; i < 4; i++)
-		list[i] = nullptr;
+		list[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other) {
@@ -28,7 +28,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other) {
 	for (int i = 0; i < 4; i++)
 		learnMateria(other.list[i]->clone());
 	for (int i = 0; i < 4; i++)
-		list[i] = nullptr;
+		list[i] = NULL;
 	return (*this);
 }
 
@@ -45,9 +45,9 @@ void MateriaSource::learnMateria(AMateria *mat) {
 
 AMateria *MateriaSource::createMateria(const std::string &type) {
     for (int i = 0; i < 4; i++)
-        if (list[i]->getType() == type)
+        if (list[i] && list[i]->getType() == type)
             return (list[i]->clone());
-    return (nullptr);
+    return (NULL);
 }
 
 MateriaSource::~MateriaSource() {
