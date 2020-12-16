@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 13:29:06 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/15 06:11:19 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:16:51 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Victim {
         Victim &operator=(const Victim &other);
         std::string getName() const;
         virtual void getPolymorphed() const;
-        ~Victim();
+        virtual ~Victim();
 };
 std::ostream &operator<<(std::ostream &os, const Victim &other);
 

@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 13:28:11 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/15 06:30:29 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:16:49 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main() {
     Sorcerer robert("Robert", "the Magnificent");
     Victim jim("Jimmy");
     Peon joe("Joe");
+
     Unicorn pegaze("Pegaze");
     std::cout << robert << jim << joe << pegaze;
     robert.polymorph(jim);
