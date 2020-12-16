@@ -27,20 +27,15 @@ int main() {
     AMateria* tmp;
     tmp = src->createMateria("ice");
     moi->equip(tmp);
-    moi->equip(tmp);
     tmp = src->createMateria("cure");
-    moi->equip(tmp);
     moi->equip(tmp);
     
     ICharacter* bob = new Character("bob");
     moi->use(0, *bob);
     moi->use(1, *bob);
-    moi->use(2, *bob);
-    moi->use(3, *bob);
     
     delete bob;
     delete moi;
     delete src;
-    delete tmp;
     return 0;
 }

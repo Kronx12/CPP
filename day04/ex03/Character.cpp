@@ -58,6 +58,8 @@ void Character::use(int i, ICharacter &target) {
 
 Character::~Character() {
     for (int i = 0; i < 4; i++)
-        if (inv[i])
+        if (inv[i]) {
             delete inv[i];
+            inv[i] = NULL;
+        }
 }

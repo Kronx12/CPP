@@ -49,6 +49,8 @@ AMateria *MateriaSource::createMateria(const std::string &type) {
 
 MateriaSource::~MateriaSource() {
     for (int i = 0; i < 4; i++)
-        if (list[i])
+        if (list[i]) {
             delete list[i];
+            list[i] = NULL;
+        }
 }
