@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 11:48:18 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/15 06:58:36 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:19:28 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ void Character::equip(AWeapon *parme) {
 
 void Character::attack(Enemy *penemy) {
     if (arme && ap >= arme->getAPCost()) {
-        std::cout << name << " attack " << penemy->getType() << " with a " << arme->getName() << std::endl;
-        arme->attack();
-        penemy->takeDamage(arme->getDamage());
-        ap -= arme->getAPCost();
+        if (ap - arme->getAPCost() >= 0) {
+            std::cout << name << " attack " << penemy->getType() << " with a " << arme->getName() << std::endl;
+            arme->attack();
+            penemy->takeDamage(arme->getDamage());
+            ap -= arme->getAPCost();
+        } else
+            std::cout << name << " don't have enougth AP" << std::endl;
     }
 }
 
