@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 14:52:02 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/15 08:21:47 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:37:34 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,14 @@ Character::Character(std::string pname) : name(pname) {
 
 Character::Character(const Character &charac) :
     name(charac.getName()) {
-    inv[0] = charac.getI(0);
-    inv[1] = charac.getI(1);
-    inv[2] = charac.getI(2);
-    inv[3] = charac.getI(3);
+    for (int i = 0; i < 4; i++)
+        inv[i] = charac.getI(i);
 }
 
 Character &Character::operator=(const Character &charac) {
     name = charac.getName();
-    inv[0] = charac.getI(0);
-    inv[1] = charac.getI(1);
-    inv[2] = charac.getI(2);
-    inv[3] = charac.getI(3);
+    for (int i = 0; i < 4; i++)
+        inv[i] = charac.getI(i);
     return (*this);
 }
 
@@ -43,14 +39,11 @@ const std::string &Character::getName() const {
 }
 
 void Character::equip(AMateria *mat) {
-    if (!inv[0])
-        inv[0] = mat;
-    else if (!inv[1])
-        inv[1] = mat;
-    else if (!inv[2])
-        inv[2] = mat;
-    else if (!inv[3])
-        inv[3] = mat;
+    for (int i = 0; i < 4; i++)
+        if (!inv[i]) {
+            inv[i] = mat;
+            break;
+        }
 }
 
 void Character::unequip(int i) {
@@ -64,12 +57,7 @@ void Character::use(int i, ICharacter &target) {
 }
 
 Character::~Character() {
-    if (inv[0])
-        delete inv[0];
-    else if (inv[1])
-        delete inv[1];
-    else if (inv[2])
-        delete inv[2];
-    else if (inv[3])
-        delete inv[3];
+    for (int i = 0; i < 4; i++)
+        if (inv[i])
+            delete inv[i];
 }

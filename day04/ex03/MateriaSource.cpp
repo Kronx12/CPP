@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 15:00:50 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/15 08:22:31 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:35:50 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,11 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other) {
 }
 
 void MateriaSource::learnMateria(AMateria *mat) {
-    if (!list[0])
-        list[0] = mat;
-    else if (!list[1])
-        list[1] = mat;
-    else if (!list[2])
-        list[2] = mat;
-    else if (!list[3])
-        list[3] = mat;
+    for (int i = 0; i < 4; i++)
+        if (!list[i]) {
+            list[i] = mat;
+            break;
+        }
 }
 
 AMateria *MateriaSource::createMateria(const std::string &type) {
