@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AssaultTerminator.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@student.le-101.fr>            +#+  +:+       +#+        */
+/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 11:19:14 by gbaud             #+#    #+#             */
-/*   Updated: 2020/03/18 11:28:33 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:34:02 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ AssaultTerminator::AssaultTerminator() {
 }
 
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &tm) {
-    (void)tm;
+    static_cast<void>(tm);
     std::cout << "* teleports from space *" << std::endl;
 }
 
 AssaultTerminator &AssaultTerminator::operator=(const AssaultTerminator &tm) {
-    (void)tm;
+    static_cast<void>(tm);
     return (*this);
 }
 
