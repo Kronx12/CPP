@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 14:10:23 by gbaud             #+#    #+#             */
-/*   Updated: 2020/07/27 16:13:04 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 14:08:39 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,48 +16,32 @@
 #include "RobotomyRequestForm.hpp"
 
 int main() {
-    try {
-        Bureaucrat b = Bureaucrat("Toto", 151);        
-    } catch(const std::exception& e ) { std::cerr << e.what() << '\n'; }
-    try {
-        Bureaucrat b = Bureaucrat("Toto", 0);        
-    } catch(const std::exception& e ) { std::cerr << e.what() << '\n'; }
     
-    Bureaucrat b = Bureaucrat("Toto", 3);
-
-    b = Bureaucrat("Toto", 150);
-    std::cout << b << std::endl;
-    b.decGrade();
-    std::cout << b << std::endl;
-    b.incGrade();
-    std::cout << b << std::endl;
-    
-    b = Bureaucrat("Toto", 1);
+    Bureaucrat a = Bureaucrat("Toto", 1);
     ShrubberyCreationForm s_form = ShrubberyCreationForm("tmp");
     RobotomyRequestForm r_form = RobotomyRequestForm("tmp");
     PresidentialPardonForm p_form = PresidentialPardonForm("tmp");
     
-    try { s_form.execute(b); }
+    try { s_form.execute(a); }
     catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
-    b.signForm(s_form);
-    b.executeForm(s_form);
+    a.signForm(s_form);
+    a.executeForm(s_form);
     
-    std::cout << std::endl;
+    std::cout << " ------ " << std::endl;
     
-    try { r_form.execute(b); }
+    try { r_form.execute(a); }
     catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
-    b.signForm(r_form);
-    b.executeForm(r_form);
+    a.signForm(r_form);
+    a.executeForm(r_form);
     
+    std::cout << " ------ " << std::endl;
     
-    std::cout << std::endl;
-    
-    try { p_form.execute(b); }
+    try { p_form.execute(a); }
     catch(const std::exception& e) { std::cerr << e.what() << '\n'; }
-    b.signForm(p_form);
-    b.executeForm(p_form);
-
-    std::cout << std::endl;
+    a.signForm(p_form);
+    a.executeForm(p_form);
+    
+    std::cout << " ------ " << std::endl;
 
     return 0;
 }
