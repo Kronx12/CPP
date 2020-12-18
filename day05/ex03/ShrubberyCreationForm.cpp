@@ -6,13 +6,11 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 14:46:06 by gbaud             #+#    #+#             */
-/*   Updated: 2020/07/27 16:46:49 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 14:19:14 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include <iostream>
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string ptarget) :
     Form("Shrubbery", 145, 137), target(ptarget) {}
@@ -37,7 +35,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
         throw Form::FormNotSignException();
     else {
         std::ofstream f;
-        f.open (target + "_shrubbery");
+        std::stringstream ss;
+        ss << target << "_shrubbery";
+        f.open(ss.str().c_str());
         f << "       _-_\n    /~~   ~~\\\n /~~         ~~\\\n{               }\n \\  _-     -_  /\n   ~  \\\\ //  ~\n_- -   | | _- _\n  _ -  | |   -_\n      // \\\\";
         f.close();
     }

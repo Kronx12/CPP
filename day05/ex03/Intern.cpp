@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/27 16:18:53 by gbaud             #+#    #+#             */
-/*   Updated: 2020/07/28 00:38:06 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 14:20:29 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ Intern::~Intern() { std::cout << "Destructor called" << std::endl; }
 
 typedef Form * (Intern::*form_constr) (std::string target);
 Form *Intern::makeForm(std::string type, std::string name) {
-	Form *res = nullptr;
+	Form *res = NULL;
 	form_constr	constr [3] = {&Intern::execShrubbery, &Intern::execRobotomy, &Intern::execPresidential};
 
 	for(int i = 0; i < 3; i++)
 		if (type == lst[i])
 			res = (this->*constr[i])(name);
-	if (res != nullptr)
+	if (res != NULL)
 		std::cout << "Intern creates " << *res << std::endl;
 	else
 		std::cout << "Error, unrecognized Form type !" << std::endl;
