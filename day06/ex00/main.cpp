@@ -6,21 +6,25 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 00:42:02 by gbaud             #+#    #+#             */
-/*   Updated: 2020/07/28 02:14:57 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 10:54:02 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+# include <iostream>
+# include <iomanip>
 #include <string>
 #include <math.h>
 #include <sstream>
 #include <iomanip>
+# include <cstdlib>
+# include <climits>
+#include <sstream>
 
 std::string get_char_val(long double value) {
     std::string res = "";
-    if (isprint(value)) {
+    if (isprint(static_cast<char>(value))) {
         res += "\'";
-        res += char (value);
+        res += static_cast<char>(value);
         res += "\'";
     } else if (isnan(value))
         res += "impossible";
@@ -31,12 +35,12 @@ std::string get_char_val(long double value) {
 
 std::string get_int_val(long double value) {
     std::string res = "";
-    if (isnan(value))
+    if (isnan(value) || static_cast<int>(value) == INT_MIN)
         res += "impossible";
     else if (isinf(value))
         res += "Non displayable";
     else
-        res += std::to_string(int (value));
+        res += static_cast<std::ostringstream*>( &(std::ostringstream() << static_cast<int>(value)) )->str();
     return (res);
 }
 
@@ -50,7 +54,7 @@ std::string get_float_val(long double value) {
         res += "nanf";
     else {
         std::stringstream stream;
-        stream << std::fixed << std::setprecision(1) << float (value);
+        stream << std::fixed << std::setprecision(1) << static_cast<float>(value);
         res += stream.str();
         res += "f";
     }
@@ -67,7 +71,7 @@ std::string get_double_val(long double value) {
         res += "nan";
     else {
         std::stringstream stream;
-        stream << std::fixed << std::setprecision(1) << double (value);
+        stream << std::fixed << std::setprecision(1) << static_cast<double>(value);
         res += stream.str();
     }
     return (res);
@@ -75,9 +79,10 @@ std::string get_double_val(long double value) {
 
 void        convert_value(std::string value) {
     long double val;
+	char*	end;
 
     try {
-        val = std::stod(value);
+        val = std::strtod(value.c_str(), &end);
         std::cout << "char: " << get_char_val(val) << std::endl;
         std::cout << "int: " << get_int_val(val) << std::endl;
         std::cout << "float: " << get_float_val(val) << std::endl;
@@ -85,7 +90,7 @@ void        convert_value(std::string value) {
     } catch (std::exception &e) {
         try {
             if (value.length() == 1) {
-                val = int (value[0]);
+                val = static_cast<int>(value[0]);
                 if (isprint(val)) {
                     std::cout << "char: " << get_char_val(val) << std::endl;
                     std::cout << "int: " << get_int_val(val) << std::endl;
