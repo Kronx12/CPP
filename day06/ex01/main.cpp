@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 02:14:30 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/19 16:13:48 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 16:17:48 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ void    *serialize(void) {
 
     ss << tmp_data.s1 << bytes << tmp_data.s2;
     
-    char *str = new char[ss.str().length() + 1];
+    char *str = new char[21];
 
     for (size_t i = 0; i < ss.str().length(); i++)
         str[i] = ss.str().at(i);
-    str[ss.str().length()] = 0;
+    str[20] = 0;
     return (str);
 }
 

@@ -3,8 +3,8 @@ NAME=identifier
 
 all:	$(NAME)
 
-$(NAME):
-	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra
+$(NAME):	$(SRCS)
+	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra -fsanitize=address -g3
 
 re:	fclean all
 
