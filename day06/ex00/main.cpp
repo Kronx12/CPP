@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 00:42:02 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/19 10:54:02 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/20 11:16:35 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void        convert_value(std::string value) {
 
     try {
         val = std::strtod(value.c_str(), &end);
+        if (end[0])
+            val = end[0];
         std::cout << "char: " << get_char_val(val) << std::endl;
         std::cout << "int: " << get_int_val(val) << std::endl;
         std::cout << "float: " << get_float_val(val) << std::endl;
