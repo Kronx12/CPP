@@ -1,10 +1,11 @@
 SRCS=main.cpp
+INC=Array.hpp
 NAME=array
 
-all:	$(NAME) $(SRCS)
+all:	$(NAME)
 
-$(NAME):
-	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra
+$(NAME): $(SRCS) $(INC)
+	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra -Wconversion -std=c++98 -fsanitize=address -g3
 
 re:	fclean all
 
