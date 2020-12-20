@@ -3,8 +3,8 @@ NAME=iter
 
 all:	$(NAME) $(SRCS)
 
-$(NAME):
-	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra
+$(NAME):	$(SRCS)
+	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra -Wconversion -std=c++98 -fsanitize=address -g3
 
 re:	fclean all
 
