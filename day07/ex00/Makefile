@@ -1,9 +1,10 @@
-SRCS=whatever.cpp
+SRCS=main.cpp
+INC=whatever.hpp
 NAME=whatever
 
-all:	$(NAME)
+all:		$(NAME)
 
-$(NAME): $(SRCS)
+$(NAME):	$(SRCS) $(INC)
 	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra -Wconversion -std=c++98 -fsanitize=address -g3
 
 re:	fclean all

@@ -6,23 +6,28 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 23:25:38 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/20 12:51:18 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 13:46:32 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 template <typename T>
 class Array {
     private:
-        unsigned int s;
+        unsigned int _size;
         T *array;
     public:
-        Array() { s = 0; array = NULL; }
-        Array(unsigned int n) { s = n; array = new T[n]; }
+        Array() { _size = 0; array = NULL; }
+        Array(unsigned int n) {
+            _size = n;
+            array = new T[n]; 
+            for (unsigned int i = 0; i < _size; i++)
+                array[i] = T();
+        }
         
 		Array<T> (const Array &other) {
-            s = other.size();
-            array = new T[s];
-            for (unsigned int i = 0; i < s; i++)
+            _size = other.size();
+            array = new T[_size];
+            for (unsigned int i = 0; i < _size; i++)
                 array[i] = T(other[i]);
         }
         
@@ -30,25 +35,21 @@ class Array {
             if (this->array)
                 delete[] this->array;
             array = new T[other.size()];
-            s = other.size();
-            for (unsigned int i = 0; i < s; i++)
+            _size = other.size();
+            for (unsigned int i = 0; i < _size; i++)
                 array[i] = T(other[i]);
             return (*this);
         }
         
 		T &operator[](const unsigned int i) const {
-            if (i < s)
+            if (i < _size)
                 return (array[i]);
-            throw OutOfBoundsException();
+            throw std::out_of_range("Index Out Of Range");
         }
         
-        unsigned int size() const { return s; }
+        unsigned int size() const { return _size; }
         ~Array<T>(void) {
             if (array)
                 delete[] array;
         }
-
-        class OutOfBoundsException : public std::exception { virtual const char *what() const throw() {
-            return ("IndexOutOfBoundsException");
-        }};
 };

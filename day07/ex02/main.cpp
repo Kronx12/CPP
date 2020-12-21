@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 23:28:14 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/20 13:00:28 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 13:43:38 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,40 @@ int main() {
     std::cout << "Try / Catch :" << std::endl;
     try {
         std::cout << string_arr_c[string_arr_c.size()] << std::endl;
+    } catch ( std::exception &e ) { std::cout << e.what() << std::endl; }
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "=== Const Int section ===" << std::endl;
+    const Array<int> c_int_arr_a = Array<int>(10);
+    const Array<int> c_int_arr_b = Array<int>(10);
+
+    // Initialisation
+    for (unsigned int i = 0; i < c_int_arr_a.size(); i++)
+        c_int_arr_a[i] = static_cast<int>(i);
+    for (unsigned int i = 0; i < c_int_arr_b.size(); i++)
+        c_int_arr_b[i] = static_cast<int>(i);
+
+    // Print
+    std::cout << "Print int_arr_a :" << std::endl; 
+    for (unsigned int i = 0; i < c_int_arr_a.size(); i++)
+        std::cout << c_int_arr_a[i] << ",";
+    std::cout << std::endl << std::endl;
+    std::cout << "Print int_arr_b :" << std::endl; 
+    for (unsigned int i = 0; i < c_int_arr_b.size(); i++)
+        std::cout << c_int_arr_b[i] << ",";
+    std::cout << std::endl << std::endl;
+
+    std::cout << "Copy constructor c_int_arr_c from c_int_arr_a:" << std::endl;
+    const Array<int> c_int_arr_c(c_int_arr_a);
+    std::cout << "Print int_arr_c :" << std::endl; 
+    for (unsigned int i = 0; i < c_int_arr_c.size(); i++)
+        std::cout << c_int_arr_c[i] << ",";
+    std::cout << std::endl << std::endl;
+
+    std::cout << "Try / Catch :" << std::endl;
+    try {
+        std::cout << c_int_arr_c[c_int_arr_c.size()] << std::endl;
     } catch ( std::exception &e ) { std::cout << e.what() << std::endl; }
     std::cout << std::endl;
     std::cout << std::endl;

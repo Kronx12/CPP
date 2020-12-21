@@ -1,9 +1,10 @@
-SRCS=iter.cpp
+SRCS=main.cpp
+INC=iter.hpp
 NAME=iter
 
-all:	$(NAME) $(SRCS)
+all:		$(NAME)
 
-$(NAME):	$(SRCS)
+$(NAME):	$(SRCS) $(INC)
 	clang++ -o $(NAME) $(SRCS) -Wall -Werror -Wextra -Wconversion -std=c++98 -fsanitize=address -g3
 
 re:	fclean all

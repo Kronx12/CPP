@@ -1,29 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 15:06:30 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/20 12:04:13 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 13:19:05 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-template <typename T>
-T min(const T& a,const T& b) { return (a < b ? a : b); }
-
-template <typename T>
-T max(const T& a,const T& b) { return (a > b ? a : b); }
-
-template <typename T>
-void swap(T& a, T& b) { 
-    T tmp = a;
-    a = b;
-    b = tmp;
-}
+#include "whatever.hpp"
 
 // Class test
 class Awesome {
@@ -57,6 +45,8 @@ int main() {
     std::string str_b = "chaine2";
     Awesome awesome_a(50);
     Awesome awesome_b(100);
+    const Awesome c_awesome_a(50);
+    const Awesome c_awesome_b(100);
 
     std::cout << "=== INT ===" << std::endl;
     std::cout << "a = " << int_a << ", b = " << int_b << std::endl;
@@ -89,5 +79,10 @@ int main() {
     std::cout << "awesome_a = " << awesome_a << ", awesome_b = " << awesome_b << std::endl;
     std::cout << "min( awesome_a, awesome_b ) = " << ::min(awesome_a, awesome_b) << std::endl;
     std::cout << "max( awesome_a, awesome_b ) = " << ::max(awesome_a, awesome_b) << std::endl << std::endl;
+    
+    std::cout << "=== CONST ===" << std::endl;
+    std::cout << "c_awesome_a = " << c_awesome_a << ", c_awesome_b = " << c_awesome_b << std::endl;
+    std::cout << "min( c_awesome_a, c_awesome_b ) = " << ::min(c_awesome_a, c_awesome_b) << std::endl;
+    std::cout << "max( c_awesome_a, c_awesome_b ) = " << ::max(c_awesome_a, c_awesome_b) << std::endl << std::endl;
     return 0;
 }
