@@ -6,7 +6,7 @@
 /*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 23:28:14 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/21 13:43:38 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 08:58:13 by gbaud            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ int main() {
 
     std::cout << "=== Const Int section ===" << std::endl;
     const Array<int> c_int_arr_a = Array<int>(10);
-    const Array<int> c_int_arr_b = Array<int>(10);
+    const Array<int> c_int_arr_b = Array<int>(20);
 
     // Initialisation
     for (unsigned int i = 0; i < c_int_arr_a.size(); i++)
