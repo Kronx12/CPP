@@ -6,9 +6,12 @@
 /*   By: dev <dev@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 01:07:55 by gbaud             #+#    #+#             */
-/*   Updated: 2020/12/29 11:17:05 by dev              ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 11:42:06 by dev              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
 #include <string>
@@ -27,3 +30,5 @@ int &easyfind(T list, const int value) {
 		throw(std::exception());
 	return (*it);
 }
+
+#endif

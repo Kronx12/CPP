@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbaud <gbaud@42lyon.fr>                    +#+  +:+       +#+        */
+/*   By: dev <dev@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 02:50:13 by gbaud             #+#    #+#             */
-/*   Updated: 2020/07/29 12:08:28 by gbaud            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 12:07:50 by dev              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int main() {
     Span sp = Span(5);
     Span sp2 = Span(5);
+    Span sp3 = Span(1000000);
     
     sp.addNumber(5);
     sp.addNumber(3);
@@ -26,8 +27,6 @@ int main() {
     try { sp.addNumber(11); }
     catch (std::exception &e) { std::cout << e.what() << std::endl; }
     
-    sp2.addNumber(3);
-    
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
     
@@ -35,5 +34,30 @@ int main() {
     catch (std::exception &e) { std::cout << e.what() << std::endl; }
     
     try { std::cout << sp2.longestSpan() << std::endl; }
+    catch (std::exception &e) { std::cout << e.what() << std::endl; }
+    
+    sp2.addNumber(5, 10);
+    try { sp2.addNumber(5, 10); }
+    catch (std::exception &e) { std::cout << e.what() << std::endl; }
+    
+    sp3.addNumber(0, 1000000); 
+    std::cout << sp3.shortestSpan() << std::endl;
+    std::cout << sp3.longestSpan() << std::endl;
+    
+    Span sp4(sp3);
+    std::cout << sp4.shortestSpan() << std::endl;
+    std::cout << sp4.longestSpan() << std::endl;
+    
+    sp2 = sp4;
+    std::cout << sp2.shortestSpan() << std::endl;
+    std::cout << sp2.longestSpan() << std::endl;
+    
+    Span sp5(1);
+    sp5.addNumber(1);
+    
+    try { std::cout << sp5.shortestSpan() << std::endl; }
+    catch (std::exception &e) { std::cout << e.what() << std::endl; }
+    
+    try { std::cout << sp5.longestSpan() << std::endl; }
     catch (std::exception &e) { std::cout << e.what() << std::endl; }
 }
